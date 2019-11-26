@@ -8,6 +8,7 @@ use App\createEmployer;
 use App\JobCategory;
 class AddEmployerController extends Controller
 {
+
     public function showEmployer(Request $request){
 
         return view('employer/employerProfile');

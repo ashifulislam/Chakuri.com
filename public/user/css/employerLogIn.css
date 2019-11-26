@@ -6,15 +6,15 @@ background-color: black;
        width:380px;
        margin:auto;
        margin-top:80px;
-       
+
        margin-left:180px;
        margin: 0 auto;
        margin-top:90px;
-      
+
 }
-    
-    
-  
+
+
+
 
 
 .einfo{
@@ -72,6 +72,7 @@ h2{
     color:aliceblue;
     opacity: 0.8;
 }
+
 input[type=submit]{
     border:none;
     width:190px;
@@ -95,6 +96,6 @@ input[type=submit]:hover{
 }
 
 .gender input[type=radio]{
-    width: 10px; 
+    width: 10px;
 }
 

@@ -18,8 +18,13 @@ Route::get('/', function () {
 Route::get('/jobApplication',function(){
     return view('employer/jobApplication');
 });
+Route::get('/jobPost',function(){
+    return view('employer/jobPost');
+});
 
-
+Route::get('/primaryJobInfo','Employer\jobPostController@showPrimaryJobInfo');
+Route::get('/additionalJobInfo','Employer\jobPostController@showAdditionalInfo');
+Route::get('/candidateReq','Employer\jobPostController@showCandidateInfo');
 Route::get('/employerProfile','Employer\AddEmployerController@showEmployer');
 Route::post('/addEmployerOperation','Employer\AddEmployerController@addEmployer');
 Route::get('/showEmployerList','EmployerController@showEmployerList');
