@@ -80,53 +80,7 @@
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
- <header class="header-area single-page">
-        <div class="header-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2">
-                        <div class="logo-area">
-<a href="index.html"><img style="height:50;width:100px;
-                        margin-top:-17px;" src="{{asset('user')}}/images/logo.png" alt="logo"></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-10">
-                        <div class="custom-navbar">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="main-menu main-menu-light">
-                             <ul>
-                            <li class="active"><a href="index.html">home</a></li>
-                            <li><a href="about.html">about us</a></li>
-                            <li><a href="job-category.html">category</a></li>
-                            <li><a href="#">Employer</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{url('employerProfile')}}">Create Profile</a></li>
-                                    <li><a href="blog-details.html">Post Job Type </a></li>
-                                    <li><a href="blog-details.html">Post Job Category </a></li>
-                                     <li><a href="blog-details.html">Post Job Responsibilities </a></li>
-                                </ul>
-                            </li>
-                             <li><a href="#">Candidate</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog-home.html">Create Profile</a></li>
-                                    <li><a href="blog-details.html">Apply Job </a></li>
-
-                                </ul>
-                            </li>
-
-                            <li class="menu-btn">
-                                <a href="#" class="login">log in</a>
-                                <a href="#" class="template-btn">sign up</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    @include('layouts/user/headerEmployer');
         <div class="page-title text-center">
             <div class="container">
                 <div class="row">

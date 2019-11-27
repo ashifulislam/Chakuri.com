@@ -2,30 +2,23 @@
 <html lang="en">
 <head>
 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Page Title -->
+
     <title>Job Single</title>
 
-    <!-- Favicon -->
+
     <link rel="shortcut icon" href="{{asset('user/images/logo/favicon.png')}}" type="image/x-icon">
 
-    <!-- CSS Files -->
-<!--
-    <link rel="stylesheet" href="{{asset('user')}}/css/animate-3.7.0.css">
-    <link rel="stylesheet" href="{{asset('employer')}}/css/font-awesome-4.7.0.min.css">
-    <link rel="stylesheet" href="user/fonts/flat-icon/flaticon.css">
--->
+
+
     <link rel="stylesheet" href="{{asset('user')}}/css/bootstrap-4.1.3.min.css">
-<!--    <link rel="stylesheet" href="{{asset('user')}}/css/owl-carousel.min.css">-->
-<!--    <link rel="stylesheet" href="{{asset('user')}}/css/nice-select.css">-->
-<!--
-    <link rel="stylesheet" href="{{asset('user')}}/css/ion.rangeSlider.css">
-    <link rel="stylesheet" href="{{asset('user')}}/css/ion.rangeSlider.skinFlat.css">
--->
+
+
     <link rel="stylesheet" href="{{asset('user')}}/css/style.css">
-    <link rel="stylesheet" href="{{asset('user')}}/css/employerLogIn.css">
+    <link rel="stylesheet" href="{{asset('employer')}}/css/employer.css">
 </head>
 @if(count($errors)>0)
  @foreach($errors->all() as $error)
@@ -80,7 +73,7 @@
                                <div class="SignUp">
         <form name="employerProfile"  method="post" action="{{url('addEmployerOperation')}}" >
                     {{csrf_field()}}
-                <h1 style="color:#fff;"> Create Profile</h1><br>
+                <h1 style="color:orange;"> Create Profile</h1><br>
 
                   <div>
                <div class="einfo">
@@ -123,7 +116,7 @@
                 <input type="checkbox" name="myCheck" id="myCheck">I agree with the terms and conditions<br>
                  </div>
                 <input class="center-block" type="submit" name="signup" value="SIGNUP"><br><br><br>
-                Already registered?<a href="{{url('logInForEmployer')}}"> &nbsp; LOGIN</a>
+                Already registered?<a href="{{url('employer/login')}}"> &nbsp; LOGIN</a>
 
 
 

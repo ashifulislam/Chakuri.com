@@ -55,7 +55,7 @@
                                     <h3 style="color:#fff;"> <u>Primary Job Information</u></h3>
                                     <input type="text" placeholder="enter job type" name="jobType"/>
                                     <br><br>
-                                    <input type="number" placeholder="enter number of vacancy" name="vacancy"/>
+                                    <input type="number" id="vacancy" placeholder="enter number of vacancy" name="vacancy"/>
                                     <br><br>
                                     <p>Job Category</p>
                                     <select id="category" name="categoryType">

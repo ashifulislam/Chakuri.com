@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="back-link back-backend">
-                    <a href="{{url('show')}}" class="btn btn-primary">Back To Your Profile</a>
+                    <a href="{{route('employer.show')}}" class="btn btn-primary">Back To Your Profile</a>
                 </div>
             </div>
         </div>
@@ -60,15 +60,14 @@
         <div class="SignUp">
         <form name="employerProfile"  method="post" action="{{url('/edit',array($updateEmployerProfile->id))}}" >
                     {{csrf_field()}}
-                <h2 style="color:#fff;"> Update Profile</h2><br>
+                <h2 style="color:orange;"> Update Profile</h2><br>
 
                   <div>
                <div class="einfo">
 
                     <h4 style="color:#fff;"> <u> Personal Info</u></h4>
                 <input type="text" placeholder="enter First Name" value="<?php
-                    echo $updateEmployerProfile->firstName ?>" name="FirstName"
-                value="">
+                    echo $updateEmployerProfile->firstName ?>" name="FirstName">
                 <br><br>
                 <input type="text" placeholder="enter Last Name" name="LastName"
                 value="<?php echo $updateEmployerProfile->lastName?>">

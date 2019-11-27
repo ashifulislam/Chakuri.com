@@ -12,7 +12,7 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                    </div>  
+                    </div>
                     <div class="main-menu">
                         <ul>
                             <li class="active"><a href="index.html">home</a></li>
@@ -21,19 +21,20 @@
                             <li><a href="#">Employer</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{url('employerProfile')}}">Create Profile</a></li>
-                                    <li><a href="blog-details.html">Post Job Type </a></li>
-                                    <li><a href="blog-details.html">Post Job Category </a></li>
-                                     <li><a href="blog-details.html">Post Job Responsibilities </a></li>
+                                    <li><a href="{{route('employer.show')}}">Your Profile </a></li>
+                                    <li><a href="blog-details.html">Post a Job </a></li>
+
                                 </ul>
                             </li>
                              <li><a href="#">Candidate</a>
                                 <ul class="sub-menu">
                                     <li><a href="blog-home.html">Create Profile</a></li>
+                                    <li><a href="blog-home.html">Your Profile</a></li>
                                     <li><a href="{{url('jobApplication')}}">Apply Job </a></li>
-                                   
+
                                 </ul>
                             </li>
-                           
+
                             <li class="menu-btn">
                                 <a href="#" class="login">log in</a>
                                 <a href="{{url('employerProfile')}}" class="template-btn">sign up</a>

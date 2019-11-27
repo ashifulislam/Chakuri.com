@@ -55,7 +55,7 @@ class LoginController extends Controller
         ];
         // dd($credentials);
         if(Auth::guard('employer')->attempt($credentials,$request->remember)){
-            return redirect()->intended(route('employer.home'));
+            return redirect()->intended(route('employer.show'));
         }
         return redirect()->back()->withInput($request->only('email,remember'));
     }

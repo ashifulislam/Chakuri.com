@@ -21,14 +21,16 @@ Route::get('/jobApplication',function(){
 Route::get('/jobPost',function(){
     return view('employer/jobPost');
 });
-
+Route::get('/jquery',function(){
+    return view('employer/jquery');
+});
 Route::get('/primaryJobInfo','Employer\jobPostController@showPrimaryJobInfo');
 Route::get('/additionalJobInfo','Employer\jobPostController@showAdditionalInfo');
 Route::get('/candidateReq','Employer\jobPostController@showCandidateInfo');
 Route::get('/employerProfile','Employer\AddEmployerController@showEmployer');
 Route::post('/addEmployerOperation','Employer\AddEmployerController@addEmployer');
 Route::get('/showEmployerList','EmployerController@showEmployerList');
-Route::get('/show','EmployerController@showEmployerList');
+Route::get('/show','EmployerController@showEmployerList')->name('employer.show');
 Route::get('/updateEmployerProfile/{id}','EmployerController@updateEmployer');
 Route::post('/edit/{id}','EmployerController@editEmployer');
 Route::get('/deleteEmployerProfile/{id}','EmployerController@deleteEmployer');
@@ -47,8 +49,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('user/logout', 'Auth\LoginController@UserLogout')->name('employer.logout');
 Route::get('/prince','EmployerController@show')->name('employer.prince');
 Route::group(['prefix'=>'employer'],function(){
-    Route::get('/','EmployerController@index')->name('employer.home');
+
+//    Route::get('/','EmployerController@index')->name('employer.home');
     Route::get('/login', 'Employer\LoginController@showLoginForm')->name('employer.login');
     Route::post('/login', 'Employer\LoginController@login')->name('employer.login.submit');
     Route::get('logout', 'Employer\LoginController@logout')->name('employer.logout');
+});
+Route::get('/homePage','Employer\AddEmployerController@showHome');
+Route::get('/angular',function(){
+
 });
