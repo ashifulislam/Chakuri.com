@@ -16,6 +16,10 @@ class EmployerController extends Controller
 //         echo $request->session()->get('user');
           return view('employer/jobCategory')->with('email',$request->session()->get('user'));
     }
+    public function createJobPost(Request $request){
+//         echo $request->session()->get('user');
+        return view('employer/employerJobPost');
+    }
     public function addJobCategory(Request $request){
 
            $this->validate($request,[

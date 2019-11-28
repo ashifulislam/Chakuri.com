@@ -100,17 +100,42 @@
                                     <div class="SignUp">
                                         <form name="jobCategory"  method="post"  action="{{url('addJobCategory')}}">
                                             {{csrf_field()}}
-                                            <h3 style="color:#fff;"> <u> Add Job Category</u></h3>
-                                            <input type="text" placeholder="enter category name" name="categoryName"/>
+                                            <h3 style="color:#fff;"> <u>Post a Job </u></h3>
+                                            <input type="text" placeholder="enter job responsibilities" name="responsibilities"/>
                                             <br><br>
+                                            <input type="number" id="vacancy" placeholder="enter number of vacancy" name="vacancy"/>
+                                            <br><br>
+                                            <p>Job Category</p>
                                             <select id="category" name="categoryType">
                                                 <option value=""> Choose Type</option>
-                                                <option name="categoryType" value="Functional">Functional</option>
-                                                <option name="categoryType" value="Media">Media</option>
+                                                <option name="categoryType" value="Accounting/Finance">Account/Finance</option>
+                                                <option name="categoryType" value="Software">Software</option>
                                             </select>
                                             <br><br>
+                                            <p>Employement Status</p>
+                                            <div id="employementStatus">
+                                                <input type="radio" name="employementStauts" value="FullTime" checked> FullTime<br>
+                                                <input type="radio" name="employementStauts" value="PartTime"> PartTime<br>
+                                                <input type="radio" name="employementStauts" value="other"> Other
+                                            </div>
+                                            <br>
+                                            <p>Degree</p>
+                                            <select id="category" name="categoryType">
+                                                <option value=""> Choose Type</option>
+                                                <option name="degree" value="SSC">SSC</option>
+                                                <option name="degree" value="HSC">HSC</option>
+                                                <option name="degree" value="BSC ">BSC</option>
+                                            </select><br><br>
+                                            <input type="text" placeholder="enter job location" name="location"/><br><br>
+                                            <input type="number" placeholder="enter salary" name="salary"/><br><br>
+                                            <input type="text" placeholder="experience" name="experience"/><br><br>
+                                            <p>Application Deadline</p>
+                                            <input type="date" placeholder="application deadline" name="deadLine"/>
+                                            <br><br>
+
+                                            <br>
                                             <input type="checkbox" name="myCheck" id="myCheck">I agree with the terms and conditions<br>
-                                            <input  type="submit" name="add" value="ADD"><br><br><br>
+                                            <input  type="submit" name="add" value="Post a Job"><br><br><br>
                                             ADD AGAIN?<a href="{{url('createJobCategory')}}"> &nbsp; ADD</a>
                                         </form>
                                     </div>

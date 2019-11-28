@@ -27,19 +27,7 @@
  @endforeach
 
 @endif
- <header class="header-area single-page">
-      @include('layouts/user/headerCreateEmployer')
-        <div class="page-title text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <h2>Update Your Profile</h2>
-                        <p> Update your profile if you needed</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+
 <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -118,28 +106,7 @@
         </div>
          </div>
     </section>
-      <section class="newsletter-area job-single section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-top text-center">
-                        <h2>Get job information daily</h2>
-                        <p>Subscribe to our newsletter and get a coupon code!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="#">
-                        <input type="email" placeholder="Your email here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email here'" required>
-                        <button type="submit" class="template-btn">subscribe now</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
 
-     @include('layouts/user/footer')
 
 </body>
 </html>

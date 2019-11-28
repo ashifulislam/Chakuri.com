@@ -14,13 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/adminHome',function(){
+    return view('admin/admin');
+});
 
 Route::get('/jobApplication',function(){
     return view('employer/jobApplication');
 });
-Route::get('/jobPost',function(){
-    return view('employer/jobPost');
-});
+
 Route::get('/jquery',function(){
     return view('employer/jquery');
 });
@@ -29,7 +30,9 @@ Route::get('/additionalJobInfo','Employer\jobPostController@showAdditionalInfo')
 Route::get('/candidateReq','Employer\jobPostController@showCandidateInfo');
 Route::get('/employerProfile','Employer\AddEmployerController@showEmployer');
 Route::post('/addEmployerOperation','Employer\AddEmployerController@addEmployer');
+Route::post('/addEmployerOperation','Employer\AddEmployerController@addEmployer');
 Route::get('/showEmployerList','EmployerController@showEmployerList');
+Route::get('/jobPost','EmployerController@createJobPost')->name('jobPost');
 Route::get('/show','EmployerController@showEmployerList')->name('employer.show');
 Route::get('/updateEmployerProfile/{id}','EmployerController@updateEmployer');
 Route::post('/edit/{id}','EmployerController@editEmployer');
@@ -37,7 +40,7 @@ Route::get('/deleteEmployerProfile/{id}','EmployerController@deleteEmployer');
 //Route::get('/logInForEmployer','EmployerController@showLoginForm');
 //Route::post('/loginOperationForEmployer','EmployerController@performLogin');
 Route::get('/viewSingleInfo/{id}','EmployerController@showSingleInfo');
-Route::get('/createJobCategory','EmployerController@createJobCategory');
+Route::get('/createJobCategory','EmployerController@createJobCategory')->name('employer.category');
 Route::post('/addJobCategory','EmployerController@addJobCategory');
 
 Route::get('/updateEmployerProfile',function(){
