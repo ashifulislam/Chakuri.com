@@ -32,7 +32,8 @@ Route::get('/employerProfile','Employer\AddEmployerController@showEmployer');
 Route::post('/addEmployerOperation','Employer\AddEmployerController@addEmployer');
 Route::post('/addEmployerOperation','Employer\AddEmployerController@addEmployer');
 Route::get('/showEmployerList','EmployerController@showEmployerList');
-Route::get('/jobPost','EmployerController@createJobPost')->name('jobPost');
+
+//Route::get('/jobPost','EmployerController@createJobPost')->name('jobPost');
 Route::get('/show','EmployerController@showEmployerList')->name('employer.show');
 Route::get('/updateEmployerProfile/{id}','EmployerController@updateEmployer');
 Route::post('/edit/{id}','EmployerController@editEmployer');
@@ -42,6 +43,7 @@ Route::get('/deleteEmployerProfile/{id}','EmployerController@deleteEmployer');
 Route::get('/viewSingleInfo/{id}','EmployerController@showSingleInfo');
 Route::get('/createJobCategory','EmployerController@createJobCategory')->name('employer.category');
 Route::post('/addJobCategory','EmployerController@addJobCategory');
+Route::resource('jobPost','JobPostController');
 
 Route::get('/updateEmployerProfile',function(){
     return view('user/updateEmployerProfile');
@@ -58,7 +60,8 @@ Route::group(['prefix'=>'employer'],function(){
     Route::post('/login', 'Employer\LoginController@login')->name('employer.login.submit');
     Route::get('logout', 'Employer\LoginController@logout')->name('employer.logout');
 });
-Route::get('/homePage','Employer\AddEmployerController@showHome');
+Route::get('/homePage','candidate\HomeController@showHome');
 Route::get('/angular',function(){
 
 });
+Route::get('relation','EmployerController@index');

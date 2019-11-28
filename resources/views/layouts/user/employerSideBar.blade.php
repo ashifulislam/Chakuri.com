@@ -36,7 +36,7 @@
                             <li><a title="Dashboard v.1" href="{{route('employer.show')}}"><span class="mini-sub-pro">Employer Profile</span></a></li>
                             <li><a title="Dashboard v.2" href="{{route('employer.category')}}"><span class="mini-sub-pro">Add Job Category</span></a></li>
                             <li><a title="Dashboard v.2" href="{{route('employer.category')}}"><span class="mini-sub-pro">show Job Category</span></a></li>
-                            <li><a title="Dashboard v.3" href="{{route('jobPost')}}"> <span class="mini-sub-pro">Post A Job</span></a></li>
+                            <li><a title="Dashboard v.3" href="{{route('jobPost.create')}}"> <span class="mini-sub-pro">Post A Job</span></a></li>
                             <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Employer List</span></a></li>
                             <!--
                                               <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>

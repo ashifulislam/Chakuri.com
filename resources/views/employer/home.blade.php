@@ -219,23 +219,26 @@
                 <div class="col-lg-12">
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="recent" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="single-job mb-4 d-lg-flex justify-content-between">
-                                <div class="job-text">
-                                    <h4>Assistant Executive - Production/ Quality Control</h4>
-                                    <ul class="mt-4">
-                                        <li class="mb-3"><h5><i class="fa fa-map-marker"></i> new yourk, USA</h5></li>
-                                        <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> Applied Chemistry & Chemical Engineering / Chemistry</h5></li>
-                                        <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5></li>
-                                    </ul>
+                           @foreach($jobPosts as $jobPost)
+                                <div class="single-job mb-4 d-lg-flex justify-content-between">
+                                    <div class="job-text">
+                                        <h4>{{$jobPost->jobCategory->categoryName}}</h4>
+                                        <ul class="mt-4">
+                                            <li class="mb-3"><h5><i class="fa fa-map-marker"></i> new yourk, USA</h5></li>
+                                            <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> Applied Chemistry & Chemical Engineering / Chemistry</h5></li>
+                                            <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5></li>
+                                        </ul>
+                                    </div>
+                                    <div class="job-img align-self-center">
+                                        <img src="{{asset('user')}}/images/job1.png" alt="job">
+                                    </div>
+                                    <div class="job-btn align-self-center">
+                                        <a href="#" class="third-btn job-btn1">full time</a>
+                                        <a href="#" class="third-btn">apply</a>
+                                    </div>
                                 </div>
-                                <div class="job-img align-self-center">
-                                    <img src="{{asset('user')}}/images/job1.png" alt="job">
-                                </div>
-                                <div class="job-btn align-self-center">
-                                    <a href="#" class="third-btn job-btn1">full time</a>
-                                    <a href="#" class="third-btn">apply</a>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
                         <div class="tab-pane fade" id="full-time" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="single-job mb-4 d-lg-flex justify-content-between">

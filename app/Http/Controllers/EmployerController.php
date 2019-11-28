@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\createEmployer;
+use App\Employer;
 use App\JobCategory;
 use Illuminate\Support\Facades\DB;
 use Sentinel;
@@ -28,9 +28,11 @@ class EmployerController extends Controller
                'myCheck'=>'required'
         ]);
 
+           $emp_id=Auth::user()->id;
         $addJobCategory=new JobCategory();
         $addJobCategory->categoryName=$request->input('categoryName');
         $addJobCategory->categoryType=$request->input('categoryType');
+        $addJobCategory->employerId=$emp_id;
         $addJobCategory->save();
         return redirect('/createJobCategory')->with('successfull','Category Saved Successfully');
         }
@@ -39,7 +41,7 @@ class EmployerController extends Controller
     {
         //
         $user_id = Auth::user()->id;
-        $data['data'] = DB::table('create_Employers')->where('id' ,'=', $user_id)->get();
+        $data['data'] = DB::table('employers')->where('id' ,'=', $user_id)->get();
         if(count ($data)>0){
             return view('employer/show')->with('showEmployer',$data['data']);        }
 
@@ -47,7 +49,7 @@ class EmployerController extends Controller
 
 
     public function updateEmployer($id){
-        $addJobCategory=createEmployer::find($id);
+        $addJobCategory=Employer::find($id);
 
 
   return view('employer/updateEmployerProfile',['updateEmployerProfile'=>$addJobCategory]);
@@ -72,21 +74,21 @@ class EmployerController extends Controller
                      'companyCountry'=>$request->input('CompanyCountry'),
                      'companyState'=>$request->input('CompanyState'),
                      'companyZipCode'=>$request->input('CompanyZipCode'));
-        $updateEmployer=createEmployer::where('id',$id);
+        $updateEmployer=Employer::where('id',$id);
         $updateEmployer->update($update);
         return redirect('/show')->with('success','Updated Successfully');
 
     }
     public function deleteEmployer($id){
 
-        $delete=createEmployer::where('id',$id);
+        $delete=Employer::where('id',$id);
         $delete->delete();
         return redirect('/show')->with('DeleteSuccess','Deleted Successfully');
     }
 
 
     public function showSingleInfo($id){
-        $showEmployer=createEmployer::find($id);
+        $showEmployer=Employer::find($id);
        return view('employer/viewSingleInfo',['viewSingleInfo'=>$showEmployer]);
     }
 

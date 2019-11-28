@@ -18,6 +18,8 @@ class CreateJobCategoriesTable extends Migration
             $table->timestamps();
             $table->string('categoryName');
             $table->string('categoryType');
+            $table->unsignedBigInteger('employerId');
+            $table->foreign('employerId')->references('id')->on('employers')->onDelete('CASCADE');
         });
     }
 

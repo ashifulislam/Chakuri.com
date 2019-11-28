@@ -158,7 +158,7 @@
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">	<i class="icon nalika-user"></i>
                                                 <span class="admin-name">{{Auth::user()->firstName}}</span>
                                                 <i class="icon nalika-down-arrow nalika-angle-dw"></i>
-                                            </a>
+
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                 <li><a href="{{url('Registration')}}"><span class="icon nalika-home author-log-ic"></span> Register</a>
                                                 </li>

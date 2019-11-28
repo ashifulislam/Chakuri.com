@@ -104,9 +104,10 @@
                                             <input type="text" placeholder="enter category name" name="categoryName"/>
                                             <br><br>
                                             <select id="category" name="categoryType">
-                                                <option value=""> Choose Type</option>
-                                                <option name="categoryType" value="Functional">Functional</option>
-                                                <option name="categoryType" value="Media">Media</option>
+                                                <option value=""> Choose Category</option>
+                                                <option name="categoryType" value="Software">Software</option>
+                                                <option name="categoryType" value="Accountance">Accountance</option>
+                                                <option name="categoryType" value="Accountance">Agriculture</option>
                                             </select>
                                             <br><br>
                                             <input type="checkbox" name="myCheck" id="myCheck">I agree with the terms and conditions<br>

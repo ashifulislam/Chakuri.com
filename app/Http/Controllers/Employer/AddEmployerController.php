@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Employer;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\createEmployer;
+use App\Employer;
 use App\JobCategory;
 class AddEmployerController extends Controller
 {
@@ -32,13 +32,13 @@ class AddEmployerController extends Controller
 
         ]);
 
-        $addJobCategory=new createEmployer();
+        $addJobCategory=new Employer();
         if($request->input('password')!=$request->input('reType')){
 
             return redirect('/employerProfile')->with('passNotMatch','Password did not match');
         }
 
-        elseif(createEmployer::where('email','=',$request->input('email'))->count()>0){
+        elseif(Employer::where('email','=',$request->input('email'))->count()>0){
             return redirect('/employerProfile')->with('emailExists','This email is already taken');
         }else{
 
