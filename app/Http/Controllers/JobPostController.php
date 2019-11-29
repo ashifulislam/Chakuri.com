@@ -55,6 +55,7 @@ class JobPostController extends Controller
 
         $emp_id=Auth::user()->id;
         $addJobPost->responsibility=$request->input('responsibilities');
+        $addJobPost->jobDetails=$request->input('jobDetails');
         $addJobPost->vacancy=$request->input('vacancy');
         $addJobPost->degreeType=$request->input('degreeType');
         $addJobPost->employmentStatus=$request->input('employmentStatus');
@@ -62,6 +63,7 @@ class JobPostController extends Controller
         $addJobPost->location=$request->input('location');
         $addJobPost->salary=$request->input('salary');
         $addJobPost->experience=$request->input('experience');
+
         $addJobPost->deadLine=$request->input('deadLine');
         $addJobPost->employerId=$emp_id;
         $addJobPost->save();

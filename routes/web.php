@@ -61,6 +61,9 @@ Route::group(['prefix'=>'employer'],function(){
     Route::get('logout', 'Employer\LoginController@logout')->name('employer.logout');
 });
 Route::get('/homePage','candidate\HomeController@showHome');
+Route::get('/category/posts/{id}','candidate\HomeController@categoryWiseJobPosts')->name('category.jobPosts');
+Route::post('/job/search','candidate\HomeController@searchjob')->name('job.search');
+Route::get('/postDetails/{id}','candidate\HomeController@showJobDetails')->name('post.details');
 Route::get('/angular',function(){
 
 });

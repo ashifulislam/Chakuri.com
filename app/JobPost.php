@@ -8,7 +8,7 @@ class JobPost extends Model
 {
     //
     protected $fillable = [
-        'responsibility', 'vacancy', 'degreeType','employmentStatus','categoryTypeId','location',
+        'responsibility','jobDetails', 'vacancy', 'degreeType','employmentStatus','categoryTypeId','location',
         'salary','experience','deadLine','employerId',
 
     ];

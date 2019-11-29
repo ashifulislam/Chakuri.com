@@ -101,16 +101,14 @@
                                         <form name="jobCategory"  method="post"  action="{{route('jobPost.store')}}">
                                             {{csrf_field()}}
                                             <h3 style="color:#fff;"> <u>Post a Job </u></h3>
-                                            <input type="text" placeholder="enter job responsibilities" name="responsibilities"/>
+                                            <textarea placeholder="enter job responsibilities" name="responsibilities"></textarea><br><br>
+                                            <textarea  name="jobDetails" row="7" cols="40" placeholder="Enter job Details"></textarea>
+
                                             <br><br>
                                             <input type="number" id="vacancy" placeholder="enter number of vacancy" name="vacancy"/>
                                             <br><br>
                                             <p>Degree</p>
-                                            <select id="category" name="degreeType">
-                                                <option value=""> Choose Type</option>
-                                                <option name="degreeType" value="Accounting/Finance">Account/Finance</option>
-                                                <option name="degreeType" value="Software">Software</option>
-                                            </select>
+                                            <textarea  name="degreeType" row="7" cols="40" placeholder="educational requirements"></textarea>
                                             <br><br>
                                             <p>Employment Status</p>
                                             <div id="employmentStatus">
@@ -129,12 +127,12 @@
                                             </select><br><br>
                                             <input type="text" placeholder="enter job location" name="location"/><br><br>
                                             <input type="number" placeholder="enter salary" name="salary"/><br><br>
-                                            <input type="text" placeholder="experience" name="experience"/><br><br>
+                                            <textarea placeholder="experience" name="experience"></textarea><br><br>
                                             <p>Application Deadline</p>
                                             <input type="date" placeholder="application deadline" name="deadLine"/>
                                             <br><br>
 
-                                            <br>
+
                                             <input type="checkbox" name="myCheck" id="myCheck">I agree with the terms and conditions<br>
                                             <input  type="submit" name="add" value="Post a Job"><br><br><br>
                                             ADD AGAIN?<a href="{{url('createJobCategory')}}"> &nbsp; ADD</a>

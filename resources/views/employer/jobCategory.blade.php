@@ -105,9 +105,9 @@
                                             <br><br>
                                             <select id="category" name="categoryType">
                                                 <option value=""> Choose Category</option>
-                                                <option name="categoryType" value="Software">Software</option>
-                                                <option name="categoryType" value="Accountance">Accountance</option>
-                                                <option name="categoryType" value="Accountance">Agriculture</option>
+                                                <option name="categoryType" value="Software">Functional</option>
+                                                <option name="categoryType" value="Accountance">Media</option>
+                                                <option name="categoryType" value="Accountance">Entertain</option>
                                             </select>
                                             <br><br>
                                             <input type="checkbox" name="myCheck" id="myCheck">I agree with the terms and conditions<br>

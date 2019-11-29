@@ -4,7 +4,7 @@
                 <div class="col-lg-2">
                     <div class="logo-area">
                         <a href="index.html"><img style="height:50;width:100px;
-                        margin-top:-17px;" src="user/images/logo.png" alt="logo"></a>
+                        margin-top:-17px;" src="{{ asset('user/images/logo.png') }}" alt="logo"></a>
                     </div>
                 </div>
                 <div class="col-lg-10">

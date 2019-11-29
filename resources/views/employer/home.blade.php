@@ -57,23 +57,31 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form action="#" class="d-md-flex justify-content-between">
-                            <select>
-                                <option value="1">All Category</option>
-                                <option value="2">Part Time</option>
-                                <option value="3">Full Time</option>
-                                <option value="4">Remote</option>
-                                <option value="5">Office Job</option>
+                        <form action="{{ route('job.search') }}" method="post" class="d-md-flex justify-content-between">
+                            @csrf
+                            <select name="categoryTypeId">
+                                <option value=""> Choose Type</option>
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->categoryName}}</option>
+                                @endforeach
+
                             </select>
-                            <select>
-                                <option value="1">Select Location</option>
-                                <option value="2">Dhaka</option>
-                                <option value="3">Rajshahi</option>
-                                <option value="4">Barishal</option>
-                                <option value="5">Noakhali</option>
+                            @error('categoryTypeId')
+                            {{$message}}
+                            @enderror
+                            <select name="location">
+
+                                <option value=""> Location</option>
+                                @foreach($jobPosts as $jobPosts)
+                                    <option value="{{$jobPosts->location}}">{{$jobPosts->location}}</option>
+                                @endforeach
                             </select>
-                            <input type="text" placeholder="Search Keyword" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'" required>
+                            @error('location')
+                            {{$message}}
+                            @enderror
+{{--                            <input type="text" placeholder="Search Keyword" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'" required>--}}
                             <button type="submit" class="template-btn">find job</button>
+{{--                            //<input type="submit" value="Search">--}}
                         </form>
                     </div>
                 </div>
@@ -124,62 +132,15 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($categories as $category)
                 <div class="col-lg-3 col-md-6">
                     <div class="single-category text-center mb-4">
-                        <img src="{{asset('user')}}/images/cat1.png" alt="category">
-                        <h4>accounting & Finance</h4>
-                        <h5>250 open job</h5>
+
+                       <a href="{{ route('category.jobPosts',$category->id) }}"> <h4>{{$category->categoryName}}</h4></a>
+                        <h5></h5>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-category text-center mb-4">
-                        <img src="{{asset('employer')}}/images/cat2.png" alt="category">
-                        <h4>production & operation</h4>
-                        <h5>250 open job</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-category text-center mb-4">
-                        <img src="{{asset('user')}}/images/cat3.png" alt="category">
-                        <h4>telecommunication</h4>
-                        <h5>250 open job</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-category text-center mb-4">
-                        <img src="{{asset('user')}}/images/cat4.png" alt="category">
-                        <h4>garments & textile</h4>
-                        <h5>250 open job</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-category text-center mb-4 mb-lg-0">
-                        <img src="{{asset('user')}}/images/cat5.png" alt="category">
-                        <h4>marketing and sales</h4>
-                        <h5>250 open job</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-category text-center mb-4 mb-lg-0">
-                        <img src="{{asset('user')}}/images/cat6.png" alt="category">
-                        <h4>engineer & architech</h4>
-                        <h5>250 open job</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-category text-center mb-4 mb-md-0">
-                        <img src="{{asset('user')}}/images/cat7.png" alt="category">
-                        <h4>design & crative</h4>
-                        <h5>250 open job</h5>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-category text-center">
-                        <img src="{{asset('user')}}/images/cat8.png" alt="category">
-                        <h4>customer support</h4>
-                        <h5>250 open job</h5>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -219,14 +180,14 @@
                 <div class="col-lg-12">
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="recent" role="tabpanel" aria-labelledby="home-tab">
-                           @foreach($jobPosts as $jobPost)
+                           @foreach($recentJobs as $jobPost)
                                 <div class="single-job mb-4 d-lg-flex justify-content-between">
                                     <div class="job-text">
                                         <h4>{{$jobPost->jobCategory->categoryName}}</h4>
                                         <ul class="mt-4">
-                                            <li class="mb-3"><h5><i class="fa fa-map-marker"></i> new yourk, USA</h5></li>
-                                            <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> Applied Chemistry & Chemical Engineering / Chemistry</h5></li>
-                                            <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5></li>
+                                            <li class="mb-3"><h5><i class="fa fa-map-marker"></i>{{$jobPost->location}}</h5></li>
+                                            <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$jobPost->employmentStatus}}</h5></li>
+                                            <li><h5><i class="fa fa-clock-o"></i>{{$jobPost->deadLine}}</h5></li>
                                         </ul>
                                     </div>
                                     <div class="job-img align-self-center">
@@ -234,50 +195,55 @@
                                     </div>
                                     <div class="job-btn align-self-center">
                                         <a href="#" class="third-btn job-btn1">full time</a>
-                                        <a href="#" class="third-btn">apply</a>
+                                        <a href="{{ route('post.details',$jobPost->id) }}" class="third-btn">apply</a>
                                     </div>
                                 </div>
                             @endforeach
 
                         </div>
                         <div class="tab-pane fade" id="full-time" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="single-job mb-4 d-lg-flex justify-content-between">
-                                <div class="job-text">
-                                    <h4>Asst. Manager, Production (Woven Dyeing)</h4>
-                                    <ul class="mt-4">
-                                        <li class="mb-3"><h5><i class="fa fa-map-marker"></i> new yourk, USA</h5></li>
-                                        <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> Applied Chemistry & Chemical Engineering / Chemistry</h5></li>
-                                        <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5></li>
-                                    </ul>
+                            @foreach($fullTimeJobs as $jobPost)
+                                <div class="single-job mb-4 d-lg-flex justify-content-between">
+                                    <div class="job-text">
+                                        <h4>{{$jobPost->jobCategory->categoryName}}</h4>
+                                        <ul class="mt-4">
+                                            <li class="mb-3"><h5><i class="fa fa-map-marker"></i>{{$jobPost->location}}</h5></li>
+                                            <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$jobPost->employmentStatus}}</h5></li>
+                                            <li><h5><i class="fa fa-clock-o"></i>{{$jobPost->deadLine}}</h5></li>
+                                        </ul>
+                                    </div>
+                                    <div class="job-img align-self-center">
+                                        <img src="{{asset('user')}}/images/job1.png" alt="job">
+                                    </div>
+                                    <div class="job-btn align-self-center">
+                                        <a href="#" class="third-btn job-btn1">full time</a>
+                                        <a href="{{ route('post.details',$jobPost->id) }}" class="third-btn">apply</a>
+                                    </div>
                                 </div>
-                                <div class="job-img align-self-center">
-                                    <img src="{{asset('user')}}/images/job2.png" alt="job">
-                                </div>
-                                <div class="job-btn align-self-center">
-                                    <a href="#" class="third-btn job-btn2">full time</a>
-                                    <a href="#" class="third-btn">apply</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
-                        <div class="tab-pane fade" id="part-time" role="tabpanel" aria-labelledby="contact-tab">
-                            <div class="single-job mb-4 d-lg-flex justify-content-between">
-                                <div class="job-text">
-                                    <h4>Deputy Manager/ Assistant Manager - Footwear</h4>
-                                    <ul class="mt-4">
-                                        <li class="mb-3"><h5><i class="fa fa-map-marker"></i> new yourk, USA</h5></li>
-                                        <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> Applied Chemistry & Chemical Engineering / Chemistry</h5></li>
-                                        <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5></li>
-                                    </ul>
+                        <div class="tab-pane fade" id="part-time" role="tabpanel" aria-labelledby="profile-tab">
+                            @foreach($partTimeJobs as $jobPost)
+                                <div class="single-job mb-4 d-lg-flex justify-content-between">
+                                    <div class="job-text">
+                                        <h4>{{$jobPost->jobCategory->categoryName}}</h4>
+                                        <ul class="mt-4">
+                                            <li class="mb-3"><h5><i class="fa fa-map-marker"></i>{{$jobPost->location}}</h5></li>
+                                            <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$jobPost->employmentStatus}}</h5></li>
+                                            <li><h5><i class="fa fa-clock-o"></i>{{$jobPost->deadLine}}</h5></li>
+                                        </ul>
+                                    </div>
+                                    <div class="job-img align-self-center">
+                                        <img src="{{asset('user')}}/images/job1.png" alt="job">
+                                    </div>
+                                    <div class="job-btn align-self-center">
+                                        <a href="#" class="third-btn job-btn1">full time</a>
+                                        <a href="{{ route('post.details',$jobPost->id) }}" class="third-btn">apply</a>
+                                    </div>
                                 </div>
-                                <div class="job-img align-self-center">
-                                    <img src="{{asset('user')}}/images/job3.png" alt="job">
-                                </div>
-                                <div class="job-btn align-self-center">
-                                    <a href="#" class="third-btn job-btn3">full time</a>
-                                    <a href="#" class="third-btn">apply</a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
+
                         <div class="tab-pane fade" id="intern" role="tabpanel" aria-labelledby="contact-tab2s">
                             <div class="single-job mb-4 d-lg-flex justify-content-between">
                                 <div class="job-text">
