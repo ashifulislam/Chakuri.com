@@ -8,7 +8,7 @@
     <nav id="sidebar" class="">
         <div class="sidebar-header">
             <!--                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>-->
-            <br> <h1>Candidate</h1>
+            <br> <h1> Admin</h1>
             <strong><img src="img/logo/logosn.png" alt="" /></strong>
         </div>
         <div class="nalika-profile">
@@ -30,13 +30,16 @@
                     <li class="active">
                         <a class="has-arrow" href="index.html">
                             <i class="icon nalika-home icon-wrap"></i>
-                            <span class="mini-click-non">Candidate Operation</span>
+                            <span class="mini-click-non">Super Admin</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Dashboard v.1" href="{{route('candidate.show')}}"><span class="mini-sub-pro">Your Profile</span></a></li>
-                            <li><a title="Dashboard v.2" href="{{route('update.show')}}"><span class="mini-sub-pro">Edit Profile</span></a></li>
-                            <li><a title="Dashboard v.2" href=""><span class="mini-sub-pro">Apply Job</span></a></li>
-                            <li><a title="Dashboard v.3" href=""> <span class="mini-sub-pro">Post A Job</span></a></li>
+                            <li><a title="Dashboard v.1" href="{{route('candidate.show')}}"><span class="mini-sub-pro">Post Approval</span></a></li>
+                            <li><a title="Dashboard v.2" href="{{route('update.show')}}"><span class="mini-sub-pro">show Approval Post</span></a></li>
+                            <li><a title="Dashboard v.2" href=""><span class="mini-sub-pro">Show Employer list</span></a></li>
+                            <li><a title="Dashboard v.3" href="{{route('admin.show')}}"> <span class="mini-sub-pro">Show Candidate List</span></a></li>
+                            <li><a title="Dashboard v.3" href="{{route('subscriber.show')}}"> <span class="mini-sub-pro">Show Subscribers</span></a></li>
+
+                            <li><a title="Dashboard v.3" href=""> <span class="mini-sub-pro">Send Job ALert</span></a></li>
                             <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro"></span></a></li>
                             <!--
                                               <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>

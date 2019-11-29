@@ -16,10 +16,19 @@
                         <div class="col-xl-5 offset-xl-1 col-lg-6">
                             <div class="single-widget-home mb-5 mb-lg-0">
                                 <h3 class="mb-4">newsletter</h3>
-                                <p class="mb-4">You can trust us. we only send promo offers, not a single.</p>  
-                                <form action="#">
-                                    <input type="email" placeholder="Your email here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email here'" required>
+                                <p class="mb-4">You can trust us. we only send promo offers, not a single.</p>
+                                <form action="{{route('subscriber.store')}}" method="post">
+                                    @csrf
+                                    <input type="email" name="email" placeholder="Your email here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email here'" required>
                                     <button type="submit" class="template-btn">subscribe now</button>
+
+                                    @if($errors->any())
+                                        @foreach($errors->all() as $errors)
+                                            <h3 style="color:red"> {{$errors}}</h3>
+                                        @endforeach
+                                        @endif
+                                    <h2 style="color:green"> {{ session()->get('message') }}</h2>
+
                                 </form>
                             </div>
                         </div>

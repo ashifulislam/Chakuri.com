@@ -1,11 +1,4 @@
-<?php
-session_start();
-if(!isset($_SESSION['email'])){
-    header('location:logInForm.html');
-}
 
-$id = $_SESSION['user_id'];
-?>
 <head>
     <meta charset="UTF-8">
     <title>Resume Project</title>
@@ -20,17 +13,7 @@ $id = $_SESSION['user_id'];
                 <img src="{{asset('candidate/img/prince.JPG')}}" alt="" class="profilepicture" >
             </div>
             <div class="names">
-<!--                --><?php
-//                $con=mysqli_connect('localhost','root','');
-//                mysqli_select_db($con,'personal');
-//
-//                $sql = "select * from p_info where user_id ='$id'";
-//                $result = mysqli_query($con, $sql);
-//                while($res = mysqli_fetch_assoc($result)){
-//                    echo "<h1>" .$res['firstName']. " " .$res['lastName']."<h1>";
-//                    echo "<h2>" .$res['lastName']. "</h2>";
-//                }
-//                ?>
+
                 @foreach($showCandidate as $showCandidate)
                     <h2> {{$showCandidate->firstName}}</h2>
 
