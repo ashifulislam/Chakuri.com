@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('user')}}/css/ion.rangeSlider.skinFlat.css">
 -->
     <link rel="stylesheet" href="{{asset('user')}}/css/style.css">
-    <link rel="stylesheet" href="{{asset('user')}}/css/employerLogIn.css">
+{{--    <link rel="stylesheet" href="{{asset('user')}}/css/employer.css">--}}
 </head>
 <body>
 @if(count($errors)>0)

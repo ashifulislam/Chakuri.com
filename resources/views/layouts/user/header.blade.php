@@ -4,7 +4,7 @@
                 <div class="col-lg-2">
                     <div class="logo-area">
                         <a href="index.html"><img style="height:50;width:100px;
-                        margin-top:-17px;" src="{{ asset('user/images/logo.png') }}" alt="logo"></a>
+                        margin-top:-17px;" src="{{ asset('user/images/logo.png')}}" alt="logo"></a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -28,8 +28,8 @@
                             </li>
                              <li><a href="#">Candidate</a>
                                 <ul class="sub-menu">
-                                    <li><a href="blog-home.html">Create Profile</a></li>
-                                    <li><a href="blog-home.html">Your Profile</a></li>
+                                    <li><a href="{{route('candidate.profile')}}">Create Profile</a></li>
+                                    <li><a href="{{route('candidate.home')}}">Your Profile</a></li>
                                     <li><a href="{{url('jobApplication')}}">Apply Job </a></li>
 
                                 </ul>

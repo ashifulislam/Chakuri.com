@@ -31,8 +31,9 @@
                             </li>
                              <li><a href="#">Candidate</a>
                                 <ul class="sub-menu">
-                                    <li><a href="blog-home.html">Create Profile</a></li>
-                                    <li><a href="{{url('jobApplication')}}">Apply Job </a></li>
+                                    <li><a href="{{route('candidate.profile')}}">Create Profile</a></li>
+                                    <li><a href="{{route('candidate.home')}}">Your Profile</a></li>
+                                    <li><a href="{{url('')}}">Apply Job </a></li>
 
                                 </ul>
                             </li>
@@ -40,7 +41,7 @@
                             <li class="menu-btn">
 
 
-                                <a href="{{url('home')}}" class="template-btn">Post Job</a>
+                                <a href="{{route('jobPost.create')}}" class="template-btn">Post Job</a>
                             </li>
                         </ul>
                         </div>

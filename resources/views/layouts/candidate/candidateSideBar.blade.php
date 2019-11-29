@@ -8,12 +8,12 @@
     <nav id="sidebar" class="">
         <div class="sidebar-header">
             <!--                <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>-->
-            <br> <h1>Employer</h1>
+            <br> <h1>Candidate</h1>
             <strong><img src="img/logo/logosn.png" alt="" /></strong>
         </div>
         <div class="nalika-profile">
             <div class="profile-dtl">
-                <a href="#"><img src="{{asset('/img/notification/prince.jpg')}}" alt="the image of admin" /></a>
+                <a href="#"><img src="img/notification/prince.jpg" alt="the image of admin" /></a>
                 <h2>Ashiful <span class="min-dtn">Islam Prince</span></h2>
             </div>
             <div class="profile-social-dtl">
@@ -30,14 +30,14 @@
                     <li class="active">
                         <a class="has-arrow" href="index.html">
                             <i class="icon nalika-home icon-wrap"></i>
-                            <span class="mini-click-non">Employers Operation</span>
+                            <span class="mini-click-non">Candidate Operation</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Dashboard v.1" href="{{route('employer.show')}}"><span class="mini-sub-pro">Employer Profile</span></a></li>
-                            <li><a title="Dashboard v.2" href="{{route('employer.category')}}"><span class="mini-sub-pro">Add Job Category</span></a></li>
-                            <li><a title="Dashboard v.2" href="{{route('employer.category')}}"><span class="mini-sub-pro">show Job Category</span></a></li>
-                            <li><a title="Dashboard v.3" href="{{route('jobPost.create')}}"> <span class="mini-sub-pro">Post A Job</span></a></li>
-                            <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Employer List</span></a></li>
+                            <li><a title="Dashboard v.1" href="{{route('candidate.show')}}"><span class="mini-sub-pro">Your Profile</span></a></li>
+                            <li><a title="Dashboard v.2" href=""><span class="mini-sub-pro">Edit Profile</span></a></li>
+                            <li><a title="Dashboard v.2" href=""><span class="mini-sub-pro">Apply Job</span></a></li>
+                            <li><a title="Dashboard v.3" href=""> <span class="mini-sub-pro">Post A Job</span></a></li>
+                            <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro"></span></a></li>
                             <!--
                                               <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>
                                            <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Product Detail</span></a></li>
