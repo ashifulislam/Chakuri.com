@@ -36,4 +36,9 @@ public function searchjob(Request $request){
    // dd($data['jobPosts']);
     return view('candidate.searchResult',$data);
 }
+//public function jobApplication($id){
+//    $jobPosts['jobPosts']=JobPost::with('employer')->find($id);
+//
+//    return view('candidate.jobApplicationForm',$jobPosts);
+//}
 }

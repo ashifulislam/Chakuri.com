@@ -37,7 +37,7 @@
                             <li><a title="Dashboard v.2" href="{{route('update.show')}}"><span class="mini-sub-pro">show Approval Post</span></a></li>
                             <li><a title="Dashboard v.2" href=""><span class="mini-sub-pro">Show Employer list</span></a></li>
                             <li><a title="Dashboard v.3" href="{{route('admin.show')}}"> <span class="mini-sub-pro">Show Candidate List</span></a></li>
-                            <li><a title="Dashboard v.3" href="{{route('subscriber.show')}}"> <span class="mini-sub-pro">Show Subscribers</span></a></li>
+                            <li><a title="Dashboard v.3" href="{{route('subscriber.show')}}"> <span class="mini-sub-pro">Subscriber List</span></a></li>
 
                             <li><a title="Dashboard v.3" href=""> <span class="mini-sub-pro">Send Job ALert</span></a></li>
                             <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro"></span></a></li>

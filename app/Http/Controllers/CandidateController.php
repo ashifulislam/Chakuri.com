@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\JobApplication;
+use App\JobPost;
 use Illuminate\Http\Request;
 use App\Candidate;
 use App\JobCategory;
@@ -83,7 +85,22 @@ class CandidateController extends Controller
         $delete->delete();
         return redirect('/showForUpdate')->with('DeleteSuccess','Deleted Successfully');
     }
+    public function showApplicationForm(){
+        return view('candidate/jobApplicationForm');
+}
+    public function jobApplication($id){
+        $jobPosts['jobPosts']=JobPost::with('employer')->find($id);
+        return view('candidate.jobApplicationForm',$jobPosts);
+    }
 
+    public function jobConfirmation(){
+
+        $user_id = Auth::user()->id;
+
+        $jobPosts['appliedJobs']=JobApplication::where('candidateId',$user_id)->with(['jobPost'=>function($query){
+            return $query->with(['employer','jobCategory']);}])->orderBy('id','DESC')->get();
+        return view('candidate.applyConfirmation',$jobPosts);
+    }
 }
 
 

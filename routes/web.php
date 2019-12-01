@@ -75,6 +75,11 @@ Route::get('/adminHome','AdminController@adminHome')->name('admin.home');
 Route::get('/showCandidates','AdminController@showCandidates')->name('admin.show');
 Route::post('/subscriber','SubscriberController@store')->name('subscriber.store');
 
-Route::get('/subscriber','admin\SubscriberController@showSubscribers')->name('subscriber.show');
-Route::delete('/subscriber','SubscriberController@delete')->name('subscriber.delete');
+Route::get('/userSubscriber','admin\SubscriberController@showSubscribers')->name('subscriber.show');
 
+Route::get('/deleteSubscriber/{id}','admin\SubscriberController@delete')->name('subscriber.delete');
+
+Route::get('/jobApplication/{id}','CandidateController@jobApplication')->name('application.show');
+
+Route::post('/jobApplication','candidate\jobApplyController@jobApplied')->name('application.store');
+Route::get('/jobConfirmation','CandidateController@jobConfirmation')->name('application.confirm');

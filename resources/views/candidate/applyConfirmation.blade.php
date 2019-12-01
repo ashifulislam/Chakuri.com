@@ -39,14 +39,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                @foreach($jobPosts as $jobPost)
+                @foreach($appliedJobs as $application)
                     <div class="single-job mb-4 d-lg-flex justify-content-between">
                         <div class="job-text">
-                            <h4>{{ $jobPost->jobCategory->categoryName }}</h4>
+                            <h4>{{ $application->jobPost->jobCategory->categoryname }}</h4>
                             <ul class="mt-4">
-                                <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ $jobPost->location }}</h5></li>
-                                <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$jobPost->vacancy}}</h5></li>
-                                <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: {{$jobPost->deadLine}}</h5></li>
+                                <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ $application->jobPost->employer->companyName }}</h5></li>
+                                <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$application->status}}</h5></li>
+{{--                                <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: {{$jobPost->deadLine}}</h5></li>--}}
                             </ul>
                         </div>
                         <div class="job-img align-self-center">
@@ -54,15 +54,12 @@
                         </div>
                         <div class="job-btn align-self-center">
                             <a href="#" class="third-btn job-btn1">full time</a>
-                            <a href="{{ route('post.details',$jobPost->id) }}" class="third-btn">apply</a>
+{{--                            <a href="{{ route('post.details',$jobPost->id) }}" class="third-btn">apply</a>--}}
                         </div>
                     </div>
 
                 @endforeach
             </div>
-        </div>
-        <div class="more-job-btn mt-5 text-center">
-            <a href="#" class="template-btn">more job post</a>
         </div>
     </div>
 </section>

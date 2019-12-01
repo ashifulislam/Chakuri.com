@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\JobCategory;
 use App\JobPost;
+use App\Subscriber;
 use Illuminate\Http\Request;
 use App\Employer;
 use Auth;
@@ -55,7 +56,7 @@ class JobPostController extends Controller
 
         $emp_id=Auth::user()->id;
         $addJobPost->responsibility=$request->input('responsibilities');
-        $addJobPost->jobDetails=$request->input('jobDetails');
+        $addJobPost->jobPosition=$request->input('jobPosition');
         $addJobPost->vacancy=$request->input('vacancy');
         $addJobPost->degreeType=$request->input('degreeType');
         $addJobPost->employmentStatus=$request->input('employmentStatus');
@@ -67,6 +68,7 @@ class JobPostController extends Controller
         $addJobPost->deadLine=$request->input('deadLine');
         $addJobPost->employerId=$emp_id;
         $addJobPost->save();
+        $subscribers=Subscriber::all();
             return redirect()->route('jobPost.create')->with('successfull','add Successfully');
 
         }

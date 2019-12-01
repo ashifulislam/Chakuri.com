@@ -2,13 +2,14 @@
 
 namespace App;
 
+use Illuminate\Contracts\Queue\Job;
 use Illuminate\Database\Eloquent\Model;
 
 class JobPost extends Model
 {
     //
     protected $fillable = [
-        'responsibility','jobDetails', 'vacancy', 'degreeType','employmentStatus','categoryTypeId','location',
+        'responsibility','jobPosition', 'vacancy', 'degreeType','employmentStatus','categoryTypeId','location',
         'salary','experience','deadLine','employerId',
 
     ];
@@ -19,5 +20,8 @@ class JobPost extends Model
     }
     public function employer(){
         return $this->belongsTo(Employer::class,'employerId');
+    }
+    public function JobApplication(){
+        $this->hasMany(JobApplication::class);
     }
 }

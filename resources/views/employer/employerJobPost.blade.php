@@ -102,7 +102,7 @@
                                             {{csrf_field()}}
                                             <h3 style="color:#fff;"> <u>Post a Job </u></h3>
                                             <textarea placeholder="enter job responsibilities" name="responsibilities"></textarea><br><br>
-                                            <textarea  name="jobDetails" row="7" cols="40" placeholder="Enter job Details"></textarea>
+                                            <input type="text" name="jobPosition" placeholder="Job Position" />
 
                                             <br><br>
                                             <input type="number" id="vacancy" placeholder="enter number of vacancy" name="vacancy"/>

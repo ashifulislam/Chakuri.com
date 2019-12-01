@@ -55,6 +55,7 @@
                         <ul>
                             <li class="mb-2">{{$singleJobPost->responsibility}}</li>
 
+
                         </ul>
                     </div>
                     <div class="single-content5 py-4">
@@ -69,13 +70,24 @@
                     <div class="single-content7 py-4">
                         <h4>Experience Requirements</h4>
                         <ul class="mt-3">
+
                             <li class="mb-2">{{$singleJobPost->experience}}</li>
+
+
+                        </ul>
+                    </div>
+                    <div class="single-content7 py-4">
+                        <h4>position</h4>
+                        <ul class="mt-3">
+
+                            <li class="mb-2">{{$singleJobPost->jobPosition}}</li>
+
 
                         </ul>
                     </div>
                     <div class="job-btn align-self-center">
 
-                        <a href="#" class="third-btn">apply</a>
+                        <a href="{{ route('application.show',$singleJobPost->id) }}" class="third-btn">apply</a>
                     </div>
                 </div>
             </div>

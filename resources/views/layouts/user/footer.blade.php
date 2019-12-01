@@ -22,11 +22,7 @@
                                     <input type="email" name="email" placeholder="Your email here" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your email here'" required>
                                     <button type="submit" class="template-btn">subscribe now</button>
 
-                                    @if($errors->any())
-                                        @foreach($errors->all() as $errors)
-                                            <h3 style="color:red"> {{$errors}}</h3>
-                                        @endforeach
-                                        @endif
+
                                     <h2 style="color:green"> {{ session()->get('message') }}</h2>
 
                                 </form>

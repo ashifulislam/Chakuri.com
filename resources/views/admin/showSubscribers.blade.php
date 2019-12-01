@@ -103,7 +103,7 @@
 												<i class="icon nalika-home"></i>
 											</div>
 											<div class="breadcomb-ctn">
-												<h2>Candidate List</h2>
+												<h2>Subscriber List</h2>
 												<p>Welcome to here <span class="bread-ntd"></span></p>
 											</div>
 										</div>
@@ -125,16 +125,14 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>Candidate List</h4>
+                            <h4>Subscriber  List</h4>
 
                             <table>
                                 <tr>
                                     <th>ID</th>
-                                    <th>FirstName</th>
-                                    <th>LastName</th>
                                     <th>Email</th>
-
-                                    <th>View</th>
+                                    <th>User Type</th>
+                                    <th>Delete</th>
 
                                 </tr>
 
@@ -148,9 +146,12 @@
                       <td>
                         {{$showSubscribers->email}}
                     </td>
+                                  <td>
+                                      {{ $showSubscribers->userType }}
+                                  </td>
 
                                       <td>
-                                          <a class="myLinkClass" style="color:blue; "onclick="return confirm('Are you sure want to delete Employer?')" href='{{url("/delete/{$showSubscribers->id}")}}' >Delete</a>
+                                          <a class="myLinkClass" style="color:blue; "onclick="return confirm('Are you sure want to delete Employer?')" href='{{url("/deleteSubscriber/{$showSubscribers->id}")}}' >Delete</a>
                                       </td>
 
 

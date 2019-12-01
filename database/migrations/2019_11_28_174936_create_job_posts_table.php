@@ -17,7 +17,7 @@ class CreateJobPostsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('responsibility');
-            $table->string('jobDetails');
+            $table->string('jobPosition');
             $table->integer('vacancy');
             $table->string('degreeType');
             $table->string('employmentStatus');
