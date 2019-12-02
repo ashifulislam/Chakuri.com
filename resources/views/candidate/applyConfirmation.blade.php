@@ -38,14 +38,31 @@
 <section class="jobs-area section-padding">
     <div class="container">
         <div class="row">
+
+            <h1>Job Application List</h1>
             <div class="col-lg-12">
                 @foreach($appliedJobs as $application)
                     <div class="single-job mb-4 d-lg-flex justify-content-between">
                         <div class="job-text">
-                            <h4>{{ $application->jobPost->jobCategory->categoryname }}</h4>
                             <ul class="mt-4">
-                                <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ $application->jobPost->employer->companyName }}</h5></li>
-                                <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$application->status}}</h5></li>
+                                <div class="col-lg-6 "style="float: left;position:relative">
+                                    <h4>Category</h4>
+                                    <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ $application->jobPost->jobCategory->categoryName }}</h5></li>
+                                    <h4>Company Name</h4>
+                                    <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ $application->jobPost->employer->companyName }}</h5></li>
+                                    <h4>Your Name</h4>
+                                    <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{Auth::user()->firstName}}</h5></li>
+                                </div>
+                                <div class="col-lg-6 " style="float:left;position:relative">
+                                    <h4>Position Applied</h4>
+                                    <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$application->jobPost->jobPosition}}</h5></li>
+                                    <h4>Status</h4>
+                                    <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$application->status}}</h5></li>
+                                    <h4>company Details</h4>
+                                    <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$application->jobPost->employer->companyDetails}}</h5></li>
+                                </div>
+
+
 {{--                                <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: {{$jobPost->deadLine}}</h5></li>--}}
                             </ul>
                         </div>
@@ -53,7 +70,7 @@
 
                         </div>
                         <div class="job-btn align-self-center">
-                            <a href="#" class="third-btn job-btn1">full time</a>
+
 {{--                            <a href="{{ route('post.details',$jobPost->id) }}" class="third-btn">apply</a>--}}
                         </div>
                     </div>

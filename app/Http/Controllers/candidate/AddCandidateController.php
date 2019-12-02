@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Candidate;
 
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Candidate;
 class AddCandidateController extends Controller
@@ -60,7 +61,8 @@ class AddCandidateController extends Controller
 
 
             $addCandidate->save();
-            return redirect('/candidateProfile')->with('successfull','add Successfully');
+           Toastr::success('candidate added successfully saved:)','success');
+            return redirect('/candidateProfile');
 
         }
     }

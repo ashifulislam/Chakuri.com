@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\JobApplication;
+use App\JobPost;
 use Illuminate\Http\Request;
 use App\Employer;
 use App\JobCategory;
@@ -14,6 +16,7 @@ class EmployerController extends Controller
 
     public function createJobCategory(Request $request){
 //         echo $request->session()->get('user');
+
           return view('employer/jobCategory')->with('email',$request->session()->get('user'));
     }
     public function createJobPost(Request $request){
@@ -34,7 +37,7 @@ class EmployerController extends Controller
         $addJobCategory->categoryType=$request->input('categoryType');
         $addJobCategory->employerId=$emp_id;
         $addJobCategory->save();
-        return redirect('/createJobCategory')->with('successfull','Category Saved Successfully');
+        return redirect('/jobCategory')->with('successfull','Category Saved Successfully');
         }
 
     public function showEmployerList()
@@ -104,5 +107,18 @@ class EmployerController extends Controller
     public function index()
     {
         return view('employer/admin_home');
+    }
+    public function showPendingJobApplication(){
+        $data['pendingPosts'] = JobApplication::where('status','pending')->with('candidate')->orderBy('id','DESC')->get();
+
+        return view('employer.pendingJobApplication',$data);
+    }
+    public function updatePendingJobApplicationStatus(Request $request, $id){
+        // dd($request->all());
+        $jobApplication = JobApplication::findOrFail($id);
+        $jobApplication->status = $request->input('status');
+        $jobApplication->save();
+
+        return redirect()->back();
     }
 }

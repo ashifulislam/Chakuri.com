@@ -136,8 +136,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="single-category text-center mb-4">
 
-                       <a href="{{ route('category.jobPosts',$category->id) }}"> <h4>{{$category->categoryName}}</h4></a>
-                        <h5></h5>
+                        <a href="{{ route('category.jobPosts',$category->id) }}"> <h4>{{$category->categoryName}}</h4></a>
+                        <h5>{{count($category->jobPosts)}}</h5>
                     </div>
                 </div>
                 @endforeach

@@ -35,8 +35,8 @@
                         <ul class="submenu-angle" aria-expanded="true">
                             <li><a title="Dashboard v.1" href="{{route('candidate.show')}}"><span class="mini-sub-pro">Your Profile</span></a></li>
                             <li><a title="Dashboard v.2" href="{{route('update.show')}}"><span class="mini-sub-pro">Edit Profile</span></a></li>
-                            <li><a title="Dashboard v.2" href=""><span class="mini-sub-pro">Apply Job</span></a></li>
-                            <li><a title="Dashboard v.3" href=""> <span class="mini-sub-pro">Post A Job</span></a></li>
+                            <li><a title="Dashboard v.2" href="{{route('application.confirm')}}"><span class="mini-sub-pro">Applied Job</span></a></li>
+                            <li><a title="Dashboard v.3" href=""> <span class="mini-sub-pro">Approved Job</span></a></li>
                             <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro"></span></a></li>
                             <!--
                                               <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>

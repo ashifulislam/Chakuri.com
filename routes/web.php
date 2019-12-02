@@ -34,7 +34,7 @@ Route::get('/updateCandidateProfile/{id}','CandidateController@updateCandidate')
 
 Route::get('/viewSingleInfo/{id}','EmployerController@showSingleInfo');
 Route::get('/viewSingleInfoCandidate/{id}','AdminController@showSingleInfo');
-Route::get('/createJobCategory','EmployerController@createJobCategory')->name('employer.category');
+Route::get('/jobCategory','EmployerController@createJobCategory')->name('employer.category');
 Route::post('/addJobCategory','EmployerController@addJobCategory');
 Route::resource('jobPost','JobPostController');
 Auth::routes();
@@ -83,3 +83,10 @@ Route::get('/jobApplication/{id}','CandidateController@jobApplication')->name('a
 
 Route::post('/jobApplication','candidate\jobApplyController@jobApplied')->name('application.store');
 Route::get('/jobConfirmation','CandidateController@jobConfirmation')->name('application.confirm');
+Route::get('/pending/posts','AdminController@showPendingPosts')->name('admin.post.showPending');
+Route::get('/approve/posts','AdminController@showApprovedPosts')->name('admin.post.showApprove');
+
+Route::put('/pending/posts/{id}','AdminController@updatePendingPostStatus')->name('admin.post.update');
+Route::delete('/approve/posts/{id}','AdminController@deletePostStatus')->name('admin.post.delete');
+Route::get('/pending/posts','EmployerController@showPendingJobApplication')->name('employer.jobApplication.showPending');
+Route::put('/pending/posts/{id}','EmployerController@updatePendingJobApplicationStatus')->name('employer.jobApplication.update');

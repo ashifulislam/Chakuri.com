@@ -47,7 +47,7 @@
                             <h2 align="center">Job Application Form</h2>
                             <h4>Account Name </h4>
                             <ul class="mt-4">
-                                <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ Auth::user()->firstName }}</h5></li>
+                                <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ Auth::user()->email }}</h5></li>
                                 {{--                                <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$jobPost->vacancy}}</h5></li>--}}
                                 {{--                                <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: {{$jobPost->deadLine}}</h5></li>--}}
                             </ul>

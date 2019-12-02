@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\JobPost;
 use Illuminate\Http\Request;
 use App\Candidate;
 use App\JobCategory;
@@ -32,6 +33,29 @@ class AdminController extends Controller
         return view('admin/viewSingleInfo',['viewSingleInfo'=>$showCandidate]);
     }
 
+
+    public function showPendingPosts(){
+        $data['pendingPosts'] = JobPost::where('status','pending')->with('employer')->orderBy('id','DESC')->get();
+        return view('admin.pendingJobPosts',$data);
+    }
+    public function showApprovedPosts(){
+        $data['pendingPosts'] = JobPost::where('status','approved')->with('employer')->orderBy('id','DESC')->get();
+
+        return view('admin.approveJobPosts',$data);
+    }
+    public function updatePendingPostStatus(Request $request, $id){
+       // dd($request->all());
+        $jobPost = JobPost::findOrFail($id);
+        $jobPost->status = $request->input('status');
+        $jobPost->save();
+
+        return redirect()->back();
+    }
+    public function deletePostStatus($id){
+        JobPost::destroy($id);
+        return redirect()->back();
+
+    }
 
 }
 

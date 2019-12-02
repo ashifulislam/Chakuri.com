@@ -33,8 +33,8 @@
                             <span class="mini-click-non">Super Admin</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Dashboard v.1" href="{{route('candidate.show')}}"><span class="mini-sub-pro">Post Approval</span></a></li>
-                            <li><a title="Dashboard v.2" href="{{route('update.show')}}"><span class="mini-sub-pro">show Approval Post</span></a></li>
+                            <li><a title="Dashboard v.1" href="{{route('admin.post.showPending')}}"><span class="mini-sub-pro">Pending Posts</span></a></li>
+                            <li><a title="Dashboard v.2" href="{{route('admin.post.showApprove')}}"><span class="mini-sub-pro">Approved Posts</span></a></li>
                             <li><a title="Dashboard v.2" href=""><span class="mini-sub-pro">Show Employer list</span></a></li>
                             <li><a title="Dashboard v.3" href="{{route('admin.show')}}"> <span class="mini-sub-pro">Show Candidate List</span></a></li>
                             <li><a title="Dashboard v.3" href="{{route('subscriber.show')}}"> <span class="mini-sub-pro">Subscriber List</span></a></li>

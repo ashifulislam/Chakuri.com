@@ -9,7 +9,7 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('user/images/logo/favicon.png')}}" type="image/x-icon">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <!-- CSS Files -->
 <!--
     <link rel="stylesheet" href="{{asset('user')}}/css/animate-3.7.0.css">
@@ -25,19 +25,26 @@
 -->
     <link rel="stylesheet" href="{{asset('user')}}/css/style.css">
     {{--    <link rel="stylesheet" href="{{asset('user')}}/css/employer.css">--}}
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 <body>
-@if(count($errors)>0)
-    @foreach($errors->all() as $errors)
-        {{$errors}}
-    @endforeach
-@endif
+{{--@if(count($errors)>0)--}}
+{{--    @foreach($errors->all() as $errors)--}}
+{{--        {{$errors}}--}}
+{{--    @endforeach--}}
+{{--@endif--}}
 @if(session('successfull'))
 
     {{session('successfull')}}
 
 @endif
+@if(session('emailExists'))
+    {{session('emailExists')}}
+@endif
+@if(session('passNotMatch'))
 
+    {{session('passNotMatch')}}
+@endif
 
 
 @include('layouts/user/headerCreateEmployer')
@@ -105,6 +112,7 @@
                                                 <div class="einfo">
                                                     <textarea placeholder="enter soft skills" name="softSkills"></textarea>
                                                     <br><br>
+                                                </div>
                                                     <h3 style="color:#fff;"> <u>Technical Skills</u></h3>
                                                     <div class="einfo">
                                                         <textarea placeholder="enter your technical skills" name="skill_name" ></textarea>
@@ -113,8 +121,12 @@
                                                 <p></p>
                                     <input type="checkbox" name="myCheck" id="myCheck">I agree with the terms and conditions<br>
                                     <input class="center-block" type="submit" name="add" value="ADD"><br><br><br>
-                                    ADD AGAIN?<a href="{{url('createJobCategory')}}"> &nbsp; ADD</a>
+
+                                                        ADD AGAIN?<a href="{{url('createJobCategory')}}"> &nbsp; ADD</a></div>
+
                                 </form>
+
+
                             </div>
                         </div>
                     </div>
@@ -124,5 +136,19 @@
     </div>
 </section>
 @include('layouts/user/footer')
+<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+{!! Toastr::message() !!}
+<script>
+
+
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+        toastr.error('{{$error}}','Error',{
+        closeButton:true,
+        progressBar:true,
+        });
+        @endforeach
+    @endif
+</script>
 </body>
 </html>

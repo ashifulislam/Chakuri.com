@@ -29,6 +29,7 @@ class JobPostController extends Controller
     {
         $emp_id=Auth::user()->id;
        $data['categories']=JobCategory::where('employerId',$emp_id)->get();
+
        return view('employer/employerJobPost',$data);
     }
 

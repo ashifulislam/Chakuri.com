@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Employer;
 
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use App\Employer;
 use App\JobCategory;
@@ -52,7 +53,9 @@ class AddEmployerController extends Controller
             $addJobCategory->companyState=$request->input('companyState');
             $addJobCategory->companyZipCode=$request->input('companyZipCode');
             $addJobCategory->save();
-            return redirect('/employerProfile')->with('successfull','add Successfully');
+            Toastr::success('candidate added successfully saved:)','success');
+
+            return redirect('/employerProfile');
 
         }
     }

@@ -13,6 +13,6 @@ class JobCategory extends Model
  }
 
   public function jobPosts(){
-     $this->hasMany(JobPost::class);
+     return $this->hasMany(JobPost::class,'categoryTypeId');
   }
 }

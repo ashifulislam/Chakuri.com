@@ -26,7 +26,7 @@ class CreateJobPostsTable extends Migration
             $table->integer('salary');
             $table->string('experience');
             $table->string('deadLine');
-
+            $table->string('status')->default('pending');
             $table->unsignedBigInteger('employerId');
      $table->foreign('employerId')->references('id')->on('employers')->onDelete('CASCADE');
      $table->foreign('categoryTypeId')->references('id')->on('job_categories')->onDelete('cascade');

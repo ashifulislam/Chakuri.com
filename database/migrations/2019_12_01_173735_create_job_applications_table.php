@@ -17,6 +17,7 @@ class CreateJobApplicationsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('salary');
             $table->text('interest');
+            $table->string('status')->default('pending');
             $table->unsignedBigInteger('candidateId');
             $table->unsignedBigInteger('jobPostId');
             $table->foreign('candidateId')->references('id')->on('candidates')->onDelete('CASCADE');
