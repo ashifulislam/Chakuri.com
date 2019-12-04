@@ -50,7 +50,7 @@
                             </ul>
                         </div>
                         <div class="job-img align-self-center">
-                            <img src="assets/images/job1.png" alt="job">
+
                         </div>
                         <div class="job-btn align-self-center">
                             <a href="#" class="third-btn job-btn1">full time</a>

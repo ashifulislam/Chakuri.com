@@ -13,7 +13,7 @@
         </div>
         <div class="nalika-profile">
             <div class="profile-dtl">
-                <a href="#"><img src="img/notification/prince.jpg" alt="the image of admin" /></a>
+                <a href="#"><img src="{{asset('img/notification/prince.jpg')}}" alt="the image of admin" /></a>
                 <h2>Ashiful <span class="min-dtn">Islam Prince</span></h2>
             </div>
             <div class="profile-social-dtl">

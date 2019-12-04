@@ -47,19 +47,10 @@
 
     <!-- Header Area Starts -->
 
-     <header class="header-area single-page">
+
       @include('layouts/user/headerCreateEmployer')
-        <div class="page-title text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <h2>Create a Profile</h2>
-                        <p> Create a employer profile for further opportunitites</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+
+
     <!-- Header Area End -->
 
     <!-- Job Single Content Starts -->

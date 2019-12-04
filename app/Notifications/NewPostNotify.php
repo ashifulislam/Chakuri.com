@@ -10,15 +10,16 @@ use Illuminate\Notifications\Notification;
 class NewPostNotify extends Notification
 {
     use Queueable;
+public $jobPost;
 
     /**
      * Create a new notification instance.
      *
-     * @return void
+     * @param $jobPost
      */
-    public function __construct()
+    public function __construct($jobPost)
     {
-        //
+        $this->jobPost=$jobPost;
     }
 
     /**
@@ -41,9 +42,11 @@ class NewPostNotify extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                 ->subject('New Post Available')
+                 ->greeting('Hello Subscriber')
+                 ->line('There is a new job post hope you like it')
+                 ->action('view Post',route('home.page'))
+                 ->line('Thank you for using our job portal');
     }
 
     /**

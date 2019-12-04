@@ -60,7 +60,7 @@
                         <form action="{{ route('job.search') }}" method="post" class="d-md-flex justify-content-between">
                             @csrf
                             <select name="categoryTypeId">
-                                <option value=""> Choose Type</option>
+                                <option value=""> Choose Category</option>
                                 @foreach($categories as $category)
                                     <option value="{{$category->id}}">{{$category->categoryName}}</option>
                                 @endforeach
@@ -79,10 +79,16 @@
                             @error('location')
                             {{$message}}
                             @enderror
-{{--                            <input type="text" placeholder="Search Keyword" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'" required>--}}
+                            <input type="text" name="searchKeyword" placeholder="Search Keyword" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'" >
                             <button type="submit" class="template-btn">find job</button>
 {{--                            //<input type="submit" value="Search">--}}
                         </form>
+
+                    </div>
+                    <div class="col-lg-12">
+                        @if($errors->any())
+                            <h4>{{$errors->first()}}</h4>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -137,7 +143,7 @@
                     <div class="single-category text-center mb-4">
 
                         <a href="{{ route('category.jobPosts',$category->id) }}"> <h4>{{$category->categoryName}}</h4></a>
-                        <h5>{{count($category->jobPosts)}}</h5>
+                        <h5>{{count($category->jobPosts)}} </h5>
                     </div>
                 </div>
                 @endforeach

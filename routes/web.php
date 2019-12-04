@@ -88,5 +88,5 @@ Route::get('/approve/posts','AdminController@showApprovedPosts')->name('admin.po
 
 Route::put('/pending/posts/{id}','AdminController@updatePendingPostStatus')->name('admin.post.update');
 Route::delete('/approve/posts/{id}','AdminController@deletePostStatus')->name('admin.post.delete');
-Route::get('/pending/posts','EmployerController@showPendingJobApplication')->name('employer.jobApplication.showPending');
-Route::put('/pending/posts/{id}','EmployerController@updatePendingJobApplicationStatus')->name('employer.jobApplication.update');
+Route::get('/pendingEmployer/posts','EmployerController@showPendingJobApplication')->name('employer.jobApplication.showPending');
+Route::put('/pendingEmployer/posts/{id}','EmployerController@updatePendingJobApplicationStatus')->name('employer.jobApplication.update');

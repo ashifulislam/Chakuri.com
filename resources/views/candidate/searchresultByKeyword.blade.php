@@ -39,58 +39,30 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
+{{--                @foreach($jobPosts as $jobPost)--}}
+                    <div class="single-job mb-4 d-lg-flex justify-content-between">
+                        <div class="job-text">
+{{--                            <h4>{{ $jobPost->jobCategory->categoryName }}</h4>--}}
+                            <ul class="mt-4">
+{{--                                <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ $jobPost->location }}</h5></li>--}}
+{{--                                <li class="mb-3"><h5><i class="fa fa-pie-chart"></i> {{$jobPost->vacancy}}</h5></li>--}}
+{{--                                <li><h5><i class="fa fa-clock-o"></i> Deadline Deadline: {{$jobPost->deadLine}}</h5></li>--}}
+                            </ul>
+                        </div>
+                        <div class="job-img align-self-center">
+                            <img src="assets/images/job1.png" alt="job">
+                        </div>
+                        <div class="job-btn align-self-center">
+                            <a href="#" class="third-btn job-btn1">full time</a>
+{{--                            <a href="{{ route('post.details',$jobPost->id) }}" class="third-btn">apply</a>--}}
+                        </div>
+                    </div>
 
-                <div class="single-job mb-4 d-lg-flex justify-content-between">
-                    <div class="job-text">
-                        <h4>{{ $singleJobPost->jobCategory->categoryName }} <br>{{ $singleJobPost->jobCategory->categoryType }}</h4>
-                        <p>{{$singleJobPost->jobDetails}}</p>
-
-
-                        <h4>vacancy</h4>
-                        <span class="ml-4">{{$singleJobPost->vacancy}}</span>
-
-
-                        <h4>job responsibility</h4>
-                        <p></p>
-                        <ul>
-                            <li class="mb-2">{{$singleJobPost->responsibility}}</li>
-
-
-                        </ul>
-
-
-                        <h4>Educational Requirements</h4>
-                        <p>{{$singleJobPost->degreeType}}</p>
-
-
-
-                        <h4>employment status</h4>
-                        <span>{{$singleJobPost->employmentStatus}}</span>
-
-
-                        <h4>Experience Requirements</h4>
-                        <ul class="mt-3">
-
-                            <li class="mb-2">{{$singleJobPost->experience}}</li>
-
-
-                        </ul>
-
-                        <h4>position</h4>
-                        <ul class="mt-3">
-
-                            <li class="mb-2">{{$singleJobPost->jobPosition}}</li>
-
-
-                        </ul>
-
-
-
-                        <a class="template-btn" href="{{ route('application.show',$singleJobPost->id) }}" class="third-btn">apply</a>
-
-                </div>
+                @endforeach
             </div>
-
+        </div>
+        <div class="more-job-btn mt-5 text-center">
+            <a href="#" class="template-btn">more job post</a>
         </div>
     </div>
 </section>

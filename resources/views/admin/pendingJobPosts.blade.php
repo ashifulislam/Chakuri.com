@@ -165,7 +165,7 @@
                         @csrf
                         @method('put')
                         <input type="hidden" name="status" value="approved" id="">
-                        <button type="submit" class="btn btn-success">Approve</button>
+                        <button type="submit" onclick="return confirm('Are you sure want to approve ?')" class="btn btn-success">Approve</button>
                     </form>
                 </td>
               <td>
@@ -173,7 +173,7 @@
                       @csrf
                       @method('put')
                       <input type="hidden" name="status" value="rejected" id="">
-                      <button type="submit" class="btn btn-danger">Reject</button>
+                      <button type="submit" onclick="return confirm('Are you sure want to reject ?')" class="btn btn-danger">Reject</button>
                   </form>
               </td>
 

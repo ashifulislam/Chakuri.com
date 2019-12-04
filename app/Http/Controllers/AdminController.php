@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\JobPost;
+use App\Notifications\NewPostNotify;
+use App\Subscriber;
 use Illuminate\Http\Request;
 use App\Candidate;
 use App\JobCategory;
+use Notification;
+
 use Illuminate\Support\Facades\DB;
 use Sentinel;
 use Auth;
@@ -48,8 +52,17 @@ class AdminController extends Controller
         $jobPost = JobPost::findOrFail($id);
         $jobPost->status = $request->input('status');
         $jobPost->save();
+       $subscriber=Subscriber::all();
 
+       foreach($subscriber as $subscriber) {
+
+
+           Notification::route('mail', $subscriber->email)->notify(new NewPostNotify($jobPost));
+
+
+       }
         return redirect()->back();
+
     }
     public function deletePostStatus($id){
         JobPost::destroy($id);

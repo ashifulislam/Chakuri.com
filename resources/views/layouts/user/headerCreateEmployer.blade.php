@@ -17,7 +17,7 @@
                         </div>
                         <div class="main-menu main-menu-light">
                              <ul>
-                            <li class="active"><a href="index.html">home</a></li>
+                            <li class="active"><a href="{{route('home.page')}}">home</a></li>
                             <li><a href="about.html">about us</a></li>
                             <li><a href="job-category.html">category</a></li>
                             <li><a href="#">Employer</a>

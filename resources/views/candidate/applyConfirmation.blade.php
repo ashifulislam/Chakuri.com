@@ -46,6 +46,7 @@
                         <div class="job-text">
                             <ul class="mt-4">
                                 <div class="col-lg-6 "style="float: left;position:relative">
+
                                     <h4>Category</h4>
                                     <li class="mb-3"><h5><i class="fa fa-map-marker"></i> {{ $application->jobPost->jobCategory->categoryName }}</h5></li>
                                     <h4>Company Name</h4>
