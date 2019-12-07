@@ -178,7 +178,7 @@
 
                                                 </li>
                                             </ul>
-                                        </li>
+                                          </li>
                                         <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-menu-task"></i></a>
 
                                             <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
